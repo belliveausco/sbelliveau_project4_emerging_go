@@ -93,7 +93,7 @@ func MakeUIWindow() (GUIhandler *ebitenui.UI) {
 		// specify the images to use
 		widget.ButtonOpts.Image(buttonImage),
 		// specify the button's text, the font face, and the color
-		widget.ButtonOpts.Text("Press Me", basicfont.Face7x13, &widget.ButtonTextColor{
+		widget.ButtonOpts.Text("", basicfont.Face7x13, &widget.ButtonTextColor{
 			Idle: color.RGBA{0xdf, 0xf4, 0xff, 0xff},
 		}),
 		// specify that the button's text needs some padding for correct display
@@ -216,8 +216,8 @@ func loadStates() []States {
 			continue
 		}
 		if row[4] == "0" {
-			new2021, _ := strconv.Atoi(row[11])
-			pop2021, _ := strconv.Atoi(row[9])
+			new2021, _ := strconv.Atoi(row[9])
+			pop2021, _ := strconv.Atoi(row[8])
 			currentState := States{
 				StateName:     fmt.Sprintf("State : %s", row[5]),
 				NPOPCHG2020:   fmt.Sprintf("Population Change 2020 : %s", row[10]),
